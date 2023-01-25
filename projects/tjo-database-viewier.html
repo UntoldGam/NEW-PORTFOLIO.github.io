@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+  <title>TJO Database Viewer</title>
+
+  <style>
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .title {
+      text-decoration: underline solid;
+
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let form = document.querySelector("form");
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          let username = form["Username"].value;
+          let element = document.getElementById("chosenUser");
+          if (username == "") {
+            element.innerHTML = "No username was entered"
+          } else {
+            element.innerHTML = `Username entered: ${username}`;
+          }
+        });
+      });
+
+  </script>
+  </head>
+
+  <html>
+
+  <body>
+    <h1 class="title">Welcome!</h1>
+    <h2>This is the TJO Database Viewer. To get started, enter a username in the form below and press the "Search"
+      button
+    </h2>
+    <form action="" method="POST">
+      <input type="text" name="Username">
+      <input type="submit" value="Search">
+    </form>
+    <p id="chosenUser"></p>
+
+  </body>
+
+  </html>

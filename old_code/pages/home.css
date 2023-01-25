@@ -1,0 +1,9 @@
+#header {
+    text-decoration: underline;
+    text-align: center;
+    border: 5px rgb(54, 120, 218) double;
+}
+
+#subtitle {
+    text-decoration: italic;
+}

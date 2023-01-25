@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="30">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+
+    <!-- <link rel="stylesheet" href="index.css"> -->
+</head>
+
+<body>
+    <h1>Test new Font</h1>
+    <div id="Project_Div">
+        <script type="module">
+            import { join, dirname } from 'node:path'
+            import { readdirSync, existsSync } from 'node:fs'
+            import { fileURLToPath } from 'url'
+
+            const __filename = fileURLToPath(import.meta.url)
+
+            const __dirname = dirname(__filename)
+            const routesPath = join(__dirname, 'projects')
+                const routeFiles = readdirSync(routesPath)
+
+                for (const file of routeFiles) {
+                    console.log(file.split('.')[0])
+                    const element = document.createElement('p', file.split('.')[0])
+                    const eText = document.createTextNode(file.split('.')[0])
+                    element.appendChild(eText)
+                    const element1 = document.createElement('p')
+                    const e1Text = document.createTextNode(file)
+                    element1.appendChild(e1Text)
+
+                    document.body.appendChild(element)
+                    document.body.appendChild(element1)
+
+                    app.get('/projects' + file.split('.')[0], (req, res) => {
+                        res.sendFile(join(routesPath, file))
+                    })
+                    if (existsSync(file)) {
+                        for (const pythonFile of file) {
+                            console.log(pythonFile.split('.')[0])
+                            const element = document.createElement('p', file.split('.')[0])
+                            const eText = document.createTextNode(pythonFile.split('.')[0])
+                            element.appendChild(eText)
+                            const element1 = document.createElement('p')
+                            const e1Text = document.createTextNode(pythonFile)
+                            element1.appendChild(e1Text)
+                            app.get('/projects/python/' + pythonFile.split('.')[0], (req, res) => {
+                                res.sendFile(join(routesPath, pythonFile))
+                            })
+                        }
+                    }
+                }
+        </script>
+    </div>
+    <script defer type="module" src="index.js"></script>
+</body>

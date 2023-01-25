@@ -1,0 +1,42 @@
+body {
+  font-family: "Verdana", Sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: rgb(41, 38, 38);
+
+}
+.navbar {
+  list-style-type: none;
+  overflow: visible;
+  position: fixed;
+  height: max-content;
+  margin: 5px;
+  width: inherit;
+  padding-bottom: 5px;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.navbar a {
+  font-family:'Times New Roman', serif;
+  width: 90px;
+  padding: 10px 10px 10px 10px;
+  margin: 5;
+  float: left;
+  display:block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  background-color: rgb(43, 38, 44);
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+}
+
+#container {
+  margin: 0;
+  background-color: rgb(47, 134, 163);
+
+}
